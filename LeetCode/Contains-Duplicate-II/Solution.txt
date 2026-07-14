@@ -1,0 +1,16 @@
+1class Solution {
+2public:
+3    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+4        set<int> ans;
+5        for(int i=0; i<nums.size(); i++){
+6            if(i>k){
+7                ans.erase(nums[i-k-1]);
+8            }
+9            if(ans.count(nums[i]))
+10            return true;
+11
+12            ans.insert(nums[i]);
+13        }
+14        return false;
+15    }
+16};
