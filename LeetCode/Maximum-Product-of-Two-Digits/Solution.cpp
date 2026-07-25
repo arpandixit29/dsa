@@ -5,17 +5,16 @@
 5        int sg=INT_MIN;
 6        while(n!=0){
 7            int a=n%10;
-8            int i=0;
-9            if(a>g){
-10                sg=g;
-11                g=a;
-12                n=n/10;
-13                continue;
-14            }
-15            if(a>sg)
-16            sg=a;
-17            n=n/10;
-18        }
-19        return g*sg;
-20    }
-21};
+8            if(a>g){
+9                sg=g;
+10                g=a;
+11                n=n/10;
+12                continue;
+13            }
+14            if(a>sg)
+15            sg=a;
+16            n=n/10;
+17        }
+18        return g*sg;
+19    }
+20};
