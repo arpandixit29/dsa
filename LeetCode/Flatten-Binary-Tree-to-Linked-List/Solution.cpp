@@ -11,26 +11,25 @@
 11 */
 12class Solution {
 13public:
-14    TreeNode* nextright=NULL;
-15    void flatten(TreeNode* root) {
-16        if(root==NULL)
-17        return;
-18        TreeNode* pre=NULL;
-19        stack<TreeNode*>st;
-20        st.push(root);
-21        while(!st.empty()){
-22            TreeNode* curr=st.top();
-23            st.pop();
-24            if(pre){
-25                pre->left=NULL;
-26                pre->right=curr;
-27            }
-28            if(curr->right)
-29            st.push(curr->right);
-30            if(curr->left)
-31            st.push(curr->left);
-32            pre=curr;
-33
-34        }
-35    }
-36};
+14    
+15    TreeNode* nextright=NULL;
+16    void flatten(TreeNode* root) {
+17        if(root==NULL)
+18        return;
+19        TreeNode* curr=root;
+20        while(curr!=NULL){
+21            if(curr->left!=NULL){
+22                if(curr->left!=NULL){
+23                    TreeNode* prev=curr->left;
+24                
+25                    while(prev->right!=NULL)
+26                    prev=prev->right;
+27                    prev->right=curr->right;
+28                    curr->right=curr->left;
+29                    curr->left=NULL;
+30                }
+31            }
+32            curr=curr->right;
+33        }
+34    }
+35};
