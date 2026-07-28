@@ -24,6 +24,6 @@
 24        return false;
 25
 26        return ans(left->left, right->right)&&
-27               ans(left->right, right->left);
+27        ans(left->right, right->left);
 28    }
 29};
