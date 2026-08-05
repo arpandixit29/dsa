@@ -1,6 +1,2 @@
-1class Solution {
-2public:
-3    bool stoneGame(vector<int>& piles) {
-4        return true;
-5    }
-6};
+a b c d e f (letters represent piles)
+0 1 2 3 4 5 (indices)
