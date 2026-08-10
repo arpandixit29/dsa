@@ -17,19 +17,15 @@
 17class Solution {
 18public:
 19    bool hasCycle(ListNode *head) {
-20        map<ListNode*, int>mp;
-21        ListNode* temp=head;
-22        int i=1;
-23
-24        while(temp!=NULL){
-25            if(mp.find(temp)!=mp.end())
+20        ListNode* slow=head;
+21        ListNode* fast=head;
+22        while(fast!=NULL&&fast->next!=NULL){
+23            fast=fast->next->next;
+24            slow=slow->next;
+25            if(fast==slow)
 26            return true;
-27
-28            mp[temp]=i++;
-29            temp=temp->next;
-30            
-31            
-32        }
-33        return false;
-34    }
-35};
+27            
+28        }
+29        return false;
+30    }
+31};
