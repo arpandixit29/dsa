@@ -12,7 +12,7 @@
 12    TreeNode* lca(TreeNode* root, TreeNode* p, TreeNode* q){
 13        if(root==NULL)
 14        return NULL;
-15        if(root->val==p->val||root->val==q->val){
+15        if(root==p||root==q){
 16            return root;
 17        }
 18        TreeNode* left=lca(root->left,p,q);
