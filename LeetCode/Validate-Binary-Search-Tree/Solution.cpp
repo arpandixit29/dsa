@@ -12,19 +12,11 @@
 12class Solution {
 13public:
 14    bool isValidBST(TreeNode* root) {
-15        long prev = LONG_MIN;
-16        return inorder(root, prev);
-17    }
-18
-19    bool inorder(TreeNode* root, long &prev) {
-20        if(root == NULL) return true;
-21
-22        if(!inorder(root->left, prev)) return false;
-23
-24        if(root->val <= prev) return false;
-25
-26        prev = root->val;
-27
-28        return inorder(root->right, prev);
-29    }
-30};
+15        return ans(root, LONG_MIN, LONG_MAX);
+16    }
+17    bool ans(TreeNode* root, long min, long max){
+18        if(root==NULL)return true;
+19        if(root->val<=min||root->val>=max)return false;
+20        return ans(root->left, min, root->val) && ans(root->right, root->val, max);
+21    }
+22};
