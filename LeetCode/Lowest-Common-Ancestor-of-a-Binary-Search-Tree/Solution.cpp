@@ -14,15 +14,17 @@
 14    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
 15        
 16        while(root!=NULL){
-17            if(p->val> root->val&& q->val> root->val){
-18                root=root->right;
-19            }
-20            else if(p->val<root->val && q->val< root->val){
-21                root=root->left;
-22            }else{
-23                return root;
-24            }
-25        }
-26        return NULL;
-27    }
-28};
+17            if(root==p|| root==q)
+18            return root;
+19            if(p->val> root->val&& q->val> root->val){
+20                root=root->right;
+21            }
+22            else if(p->val<root->val && q->val< root->val){
+23                root=root->left;
+24            }else{
+25                return root;
+26            }
+27        }
+28        return NULL;
+29    }
+30};
