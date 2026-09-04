@@ -7,15 +7,13 @@
 7        while(left<right){
 8            int width=right-left;
 9            int h=min(height[left], height[right]);
-10
-11            int area=width*h;
-12            ans=max(ans,area);
-13
-14            if(height[left]>height[right])
-15            right--;
-16            else
-17            left++;
-18        }
-19        return ans;
-20    }
-21};
+10            ans=max(ans,width*h);
+11
+12            if(height[left]>height[right])
+13            right--;
+14            else
+15            left++;
+16        }
+17        return ans;
+18    }
+19};
