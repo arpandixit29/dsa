@@ -24,11 +24,9 @@
 24                    k--;
 25                    while(j<k&& nums[j]==nums[j-1])
 26                    j++;
-27                    while(j<k && nums[k]==nums[k+1])
-28                    k--;
-29                }
-30            }
-31        }
-32        return ans;
-33    }
-34};
+27                }
+28            }
+29        }
+30        return ans;
+31    }
+32};
