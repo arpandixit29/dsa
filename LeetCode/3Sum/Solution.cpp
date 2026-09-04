@@ -13,13 +13,13 @@
 13            int j=i+1;;
 14            int k=n-1;
 15            while(j<k){
-16                if(nums[i]+nums[j]+nums[k]<0)
-17                j++;
-18                else if(nums[i]+nums[j]+nums[k]>0)
-19                k--;
-20                else{
-21                    vector<int>trip{nums[i], nums[j], nums[k]};
-22                    ans.push_back(trip);
+16                int sum=nums[i]+ nums[j]+ nums[k];
+17                if(sum<0)
+18                j++;
+19                else if(sum>0)
+20                k--;
+21                else{
+22                    ans.push_back({nums[i], nums[j], nums[k]});
 23                    j++;
 24                    k--;
 25                    while(j<k&& nums[j]==nums[j-1])
