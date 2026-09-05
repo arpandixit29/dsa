@@ -11,16 +11,14 @@
 11        }
 12        int b=nums[0];
 13        int c=INT_MAX;
-14        if(b-m[0]<=k)
-15        c=min(c,0);
-16
-17        for(int i=1; i<nums.size(); i++){
-18            b=max(nums[i], b);
-19            if(b-m[i]<=k)
-20            c=min(c,i);
-21        }
-22        if(c==INT_MAX)
-23        return -1;
-24        return c;
-25    }
-26};
+14
+15        for(int i=0; i<nums.size(); i++){
+16            b=max(nums[i], b);
+17            if(b-m[i]<=k)
+18            c=min(c,i);
+19        }
+20        if(c==INT_MAX)
+21        return -1;
+22        return c;
+23    }
+24};
