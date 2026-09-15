@@ -11,36 +11,16 @@
 11 */
 12class Solution {
 13public:
-14    TreeNode* iop(TreeNode* root){
-15        TreeNode* p=root->left;
-16        while(p->right!=NULL && p->right!=root){
-17            p=p->right;
-18        }
-19        return p;
+14    void inorder(TreeNode* root, vector<int>& ans){
+15        if(root==NULL)
+16        return;
+17        inorder(root->left, ans);
+18        ans.push_back(root->val);
+19        inorder(root->right, ans);
 20    }
 21    vector<int> inorderTraversal(TreeNode* root) {
 22        vector<int>ans;
-23        if(root==NULL)
+23        inorder(root, ans);
 24        return ans;
-25        TreeNode* curr=root;
-26        while(curr!=NULL){
-27            if(curr->left==NULL){
-28                ans.push_back(curr->val);
-29                curr=curr->right;
-30            }
-31            
-32            else{
-33                TreeNode* ip=iop(curr);
-34                if(ip->right==NULL){
-35                    ip->right=curr;
-36                    curr=curr->left;
-37                }else{
-38                    ip->right=NULL;
-39                    ans.push_back(curr->val);
-40                    curr=curr->right;
-41                }
-42            }
-43        }
-44        return ans;
-45    }
-46};
+25    }
+26};
